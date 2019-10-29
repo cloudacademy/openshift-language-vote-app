@@ -1,0 +1,1 @@
+# openshift-language-vote-app
