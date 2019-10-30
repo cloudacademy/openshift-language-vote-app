@@ -17,7 +17,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: blah
-        name: 'builder:latest'
+        name: 'frontendbuilder:latest'
   postCommit: {}
   source:
     type: Git
