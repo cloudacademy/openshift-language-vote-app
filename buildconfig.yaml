@@ -2,7 +2,7 @@ kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
   name: frontend
-  namespace: blah
+  namespace: cloudacademy
 spec:
   output:
     to:
@@ -16,7 +16,7 @@ spec:
     sourceStrategy:
       from:
         kind: ImageStreamTag
-        namespace: blah
+        namespace: cloudacademy
         name: 'frontendbuilder:latest'
   postCommit: {}
   source:

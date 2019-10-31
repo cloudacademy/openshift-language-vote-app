@@ -2,7 +2,7 @@ kind: DeploymentConfig
 apiVersion: apps.openshift.io/v1
 metadata:
   name: frontend
-  namespace: blah
+  namespace: cloudacademy
   labels:
     env: demo
     role: frontend
@@ -24,7 +24,7 @@ spec:
           - frontend
         from:
           kind: ImageStreamTag
-          namespace: blah
+          namespace: cloudacademy
           name: frontend:latest
   replicas: 2
   selector:
@@ -60,7 +60,7 @@ spec:
             failureThreshold: 3
           env:
             - name: REACT_APP_APIHOSTPORT
-              value: blah.com
+              value: api-cloudacademy.apps.openshift.democloudinc.com
           ports:
             - containerPort: 8080
               protocol: TCP
@@ -72,7 +72,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: frontend
-  namespace: blah
+  namespace: cloudacademy
   labels:
     role: frontend
     env: demo
@@ -87,7 +87,7 @@ apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
   name: frontend
-  namespace: blah
+  namespace: cloudacademy
 spec:
   path: /
   to:
